@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portafolio | Viral Marketing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f0b1a;
+    color:white;
+}
+
+/* CONTENEDOR */
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.logo{
+    width:130px;
+    height:130px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid white;
+
+    box-shadow:
+    0 0 0 3px #20011a,
+    0 0 0 6px #f5f4f3,
+    0 15px 40px rgba(0,0,0,.5);
+
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-size:clamp(32px,6vw,60px);
+    font-weight:800;
+}
+
+.hero h1 span{
+    color:#a10485;
+}
+
+.hero p{
+    max-width:650px;
+    margin:20px auto;
+    color:#c8c5d0;
+    font-size:17px;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 30px;
+    border-radius:30px;
+    background:linear-gradient(90deg,#ff00cc,#ff8800);
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+}
+
+/* SECCIONES */
+
+.section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:35px;
+}
+
+.section-title p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+/* PORTAFOLIO */
+
+.portfolio{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.video-card{
+    position:relative;
+    aspect-ratio:9/16;
+    border-radius:20px;
+    overflow:hidden;
+    background:#181226;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.video-card video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.video-overlay{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(0,0,0,.15);
+
+    transition:.3s;
+}
+
+.video-overlay i{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,0,204,.9);
+
+    font-size:22px;
+}
+
+.video-card:hover .video-overlay{
+    background:rgba(0,0,0,.35);
+}
+
+/* SERVICIOS */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service{
+    background:#19132b;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid #291d42;
+}
+
+.service i{
+    font-size:30px;
+    color:#ff00cc;
+    margin-bottom:15px;
+}
+
+.service h3{
+    margin-bottom:10px;
+}
+
+.service p{
+    color:#aaa;
+    font-size:14px;
+}
+
+/* PLANES */
+
+.plans{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.plan{
+    background:#19132b;
+    border-radius:22px;
+    padding:35px 25px;
+    border:1px solid #2b2044;
+    position:relative;
+}
+
+.plan.featured{
+    border:2px solid #ff00cc;
+    transform:translateY(-10px);
+}
+
+.plan h3{
+    font-size:22px;
+}
+
+.price{
+    font-size:40px;
+    font-weight:800;
+    margin:15px 0;
+}
+
+.plan ul{
+    list-style:none;
+    text-align:left;
+    margin:25px 0;
+}
+
+.plan li{
+    margin:12px 0;
+    color:#ccc;
+}
+
+.plan li i{
+    color:#ff00cc;
+    margin-right:8px;
+}
+
+.plan-btn{
+    display:block;
+    text-decoration:none;
+    text-align:center;
+    padding:13px;
+    border-radius:10px;
+    background:linear-gradient(90deg,#ff00cc,#ff8800);
+    color:white;
+    font-weight:700;
+}
+
+/* FORMULARIO */
+
+.form-container{
+    max-width:650px;
+    margin:auto;
+    background:#19132b;
+    padding:30px;
+    border-radius:25px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea{
+    width:100%;
+    margin:8px 0;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#0f0b1a;
+    color:white;
+}
+
+.form-container textarea{
+    resize:none;
+}
+
+.submit-btn{
+    width:100%;
+    margin-top:10px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#ff00cc,#ff8800);
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:50px 20px;
+    color:#888;
+}
+
+.socials{
+    margin-top:20px;
+}
+
+.socials a {
+    color: white;
+    margin: 0 8px;
+    font-size: 22px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    .portfolio{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .services,
+    .plans{
+        grid-template-columns:1fr;
+    }
+
+    .plan.featured{
+        transform:none;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .portfolio{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .section{
+        padding:60px 0;
+    }
+
+}
+
+
+/* ============================= */
+/* MODAL DE VIDEO */
+/* ============================= */
+
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-modal-content {
+    position: relative;
+
+    width: min(420px, 92vw);
+    height: min(750px, 90vh);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-modal video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    background: #000;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* BOTÓN CERRAR */
+
+.close-video {
+    position: absolute;
+
+    top: -15px;
+    right: -15px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #0f0b1a;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+}
+
+.close-video:hover {
+    background: #ff00cc;
+    color: white;
+
+    transform: rotate(90deg);
+}
+
+/* INDICACIÓN DE QUE EL VIDEO ES CLICKEABLE */
+
+.video-card {
+    cursor: pointer;
+}
+
+.video-card:active {
+    transform: scale(0.98);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<img src="viralmarketing.png" class="logo">
+
+<h1>Viral <span>Marketing</span></h1>
+
+<p>
+Creamos contenido que conecta, comunica y convierte.
+Conoce nuestro trabajo y descubre cómo podemos ayudar
+a hacer crecer tu marca.
+</p>
+
+<a href="#portafolio" class="hero-btn">
+Mira nuestro trabajo y lo que ofrecemos
+</a>
+
+</div>
+
+</section>
+
+
+<!-- PORTAFOLIO -->
+
+<section class="section" id="portafolio">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Nuestro trabajo</h2>
+
+<p>
+Una muestra de algunos de nuestros proyectos
+y contenidos.
+</p>
+
+</div>
+
+
+<div class="portfolio">
+
+
+<div class="video-card">
+
+<video
+src="videos/popeyes-reinaguracion.mp4"
+muted
+loop
+playsinline
+preload="metadata">
+</video>
+
+<div class="video-overlay">
+<i class="fa-solid fa-play"></i>
+</div>
+
+</div>
+
+
+<div class="video-card">
+
+<video
+src="videos/galletas-sofmale.mp4"
+muted
+loop
+playsinline
+preload="metadata">
+</video>
+
+<div class="video-overlay">
+<i class="fa-solid fa-play"></i>
+</div>
+
+</div>
+
+
+<div class="video-card">
+
+<video
+src="videos/festival-nacional-de-la-pollera.mp4"
+muted
+loop
+playsinline
+preload="metadata">
+</video>
+
+<div class="video-overlay">
+<i class="fa-solid fa-play"></i>
+</div>
+
+</div>
+
+
+<div class="video-card">
+
+<video
+src="videos/agroventa-elcruce.mp4"
+muted
+loop
+playsinline
+preload="metadata">
+</video>
+
+<div class="video-overlay">
+<i class="fa-solid fa-play"></i>
+</div>
+
+</div>
+
+
+<div class="video-card">
+
+<video
+src="videos/isla-iguana.mp4"
+muted
+loop
+playsinline
+preload="metadata">
+</video>
+
+<div class="video-overlay">
+<i class="fa-solid fa-play"></i>
+</div>
+
+</div>
+
+
+<div class="video-card">
+
+<video
+src="videos/mercado-fit-megapolis-panama.mp4"
+muted
+loop
+playsinline
+preload="metadata">
+</video>
+
+<div class="video-overlay">
+<i class="fa-solid fa-play"></i>
+</div>
+
+</div>
+
+
+<div class="video-card">
+
+<video
+src="videos/aqui-va-la-niña-volcan-chiriqui.mp4"
+muted
+loop
+playsinline
+preload="metadata">
+</video>
+
+<div class="video-overlay">
+<i class="fa-solid fa-play"></i>
+</div>
+
+</div>
+
+<div class="video-card">
+<video
+src="videos/encuentros-cafe-chiriqui.mp4"
+muted
+loop
+playsinline
+preload="metadata">
+</video>
+
+<div class="video-overlay">
+<i class="fa-solid fa-play"></i>
+</div>
+
+</div>
+
+
+<div class="video-card">
+<video
+src="videos/residencial-santa-catalina-pedasi.mp4"
+muted
+loop
+playsinline
+preload="metadata">
+</video>
+
+<div class="video-overlay">
+<i class="fa-solid fa-play"></i>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- MODAL DE VIDEO -->
+
+<div class="video-modal" id="videoModal">
+
+    <div class="video-modal-content">
+
+        <button class="close-video" id="closeVideo">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <video
+            id="modalVideo"
+            controls
+            playsinline>
+        </video>
+
+    </div>
+
+</div>
+
+<!-- SERVICIOS -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>¿Qué hacemos?</h2>
+
+<p>
+Soluciones digitales para hacer crecer tu marca.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<div class="service">
+
+<i class="fa-solid fa-video"></i>
+
+<h3>Creación de contenido</h3>
+
+<p>
+Reels, videos, fotografía y contenido pensado
+para conectar con tu audiencia.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<i class="fa-solid fa-bullhorn"></i>
+
+<h3>Publicidad digital</h3>
+
+<p>
+Campañas estratégicas para aumentar alcance,
+clientes y ventas.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<i class="fa-solid fa-mobile-screen"></i>
+
+<h3>Redes sociales</h3>
+
+<p>
+Contenido y estrategias para fortalecer
+la presencia digital de tu negocio.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<i class="fa-solid fa-user-group"></i>
+
+<h3>Marketing con creadores</h3>
+
+<p>
+Conectamos marcas con creadores para generar
+contenido auténtico.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<i class="fa-solid fa-palette"></i>
+
+<h3>Diseño gráfico</h3>
+
+<p>
+Diseños profesionales alineados con la identidad
+de tu marca.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<i class="fa-solid fa-globe"></i>
+
+<h3>Desarrollo web</h3>
+
+<p>
+Creamos sitios web modernos, rápidos y adaptados
+a dispositivos móviles.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PLANES -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Nuestros planes</h2>
+
+<p>
+Elige la opción que mejor se adapte a las necesidades
+de tu negocio.
+</p>
+
+</div>
+
+
+<div class="plans">
+
+
+<div class="plan">
+
+<h3>PLAN START</h3>
+
+<div class="price">$70</div>
+
+<ul>
+
+<li>
+<i class="fa-solid fa-check"></i>
+2 Reel
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+2 Stories
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Edición de contenido
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Copy básico para publicaciones
+</li>
+
+</ul>
+
+<a href="#contacto" class="plan-btn">
+Quiero este plan
+</a>
+
+</div>
+
+
+<div class="plan featured">
+
+<h3>PLAN PRO</h3>
+
+<div class="price">$125</div>
+
+<ul>
+
+<li>
+<i class="fa-solid fa-check"></i>
+5 Reels
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+5 Stories
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Edicion de Contenido
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Copies + llamados a la acción
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Optimización del perfil
+</li>
+
+</ul>
+
+<a href="#contacto" class="plan-btn">
+Quiero este plan
+</a>
+
+</div>
+
+
+<div class="plan">
+
+<h3>PLAN PREMIUM</h3>
+
+<div class="price">$200/mes</div>
+
+<ul>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Contenido mensual
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+8 Reels + 8 Stories
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Planificación mensual de contenido
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Gestión de redes sociales
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Optimización del perfil
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Estrategia personalizada - Reporte Mensual de Estadisticas
+</li>
+
+</ul>
+
+<a href="#contacto" class="plan-btn">
+Quiero este plan
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section class="section" id="contacto">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>¿Trabajamos juntos?</h2>
+
+<p>
+Cuéntanos sobre tu proyecto y nos pondremos en contacto contigo.
+</p>
+
+</div>
+
+
+<div class="form-container">
+
+<input
+type="text"
+id="nombre"
+placeholder="Nombre">
+
+<input
+type="text"
+id="telefono"
+placeholder="Teléfono / WhatsApp">
+
+<input
+type="email"
+id="correo"
+placeholder="Correo electrónico">
+
+
+<select id="servicio">
+
+<option value="">
+¿Qué servicio necesitas?
+</option>
+
+<option>
+Creación de contenido
+</option>
+
+<option>
+Gestión de redes sociales
+</option>
+
+<option>
+Publicidad digital
+</option>
+
+<option>
+Marketing con creadores
+</option>
+
+<option>
+Diseño gráfico
+</option>
+
+<option>
+Desarrollo web
+</option>
+
+</select>
+
+
+<select id="plan">
+
+<option value="">
+¿Te interesa alguno de nuestros planes?
+</option>
+
+<option>
+Plan Start
+</option>
+
+<option>
+Plan Pro
+</option>
+
+<option>
+Plan Premium
+</option>
+
+<option>
+Quiero una propuesta personalizada
+</option>
+
+</select>
+
+
+<textarea
+id="mensaje"
+rows="5"
+placeholder="Cuéntanos sobre tu proyecto...">
+</textarea>
+
+
+<button
+class="submit-btn"
+onclick="enviarFormulario()">
+
+Enviar información
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<strong>VIRAL MARKETING</strong>
+
+<p>
+Contenido que hace crecer negocios.
+</p>
+
+<div class="socials">
+
+<a href="https://www.instagram.com/viralmarketingpty/">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://www.facebook.com/people/Viral-Marketing/61593310475186/">
+<i class="fa-brands fa-facebook"></i>
+</a>
+
+<a href="https://www.tiktok.com/@viral.marketing96">
+<i class="fa-brands fa-tiktok"></i>
+</a>
+
+<a href="https://www.youtube.com/@viralmarketingpty">
+<i class="fa-brands fa-youtube"></i>
+</a>
+
+<a href="https://wa.me/50764647994">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* VIDEOS */
+
+/* ============================= */
+/* VIDEOS DEL PORTAFOLIO */
+/* ============================= */
+
+const videos = document.querySelectorAll(".video-card");
+
+const videoModal = document.getElementById("videoModal");
+const modalVideo = document.getElementById("modalVideo");
+const closeVideo = document.getElementById("closeVideo");
+
+
+/* PREVISUALIZACIÓN AL PASAR EL MOUSE */
+
+videos.forEach(card => {
+
+    const video = card.querySelector("video");
+
+
+    card.addEventListener("mouseenter", () => {
+
+        video.play().catch(() => {});
+
+    });
+
+
+    card.addEventListener("mouseleave", () => {
+
+        video.pause();
+
+        video.currentTime = 0;
+
+    });
+
+
+    /* ABRIR VIDEO AL HACER CLICK */
+
+    card.addEventListener("click", () => {
+
+        const videoSource = video.getAttribute("src");
+
+        modalVideo.src = videoSource;
+
+        videoModal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+        modalVideo.play().catch(() => {});
+
+    });
+
+});
+
+
+/* CERRAR VIDEO */
+
+function cerrarVideo() {
+
+    modalVideo.pause();
+
+    modalVideo.currentTime = 0;
+
+    modalVideo.removeAttribute("src");
+
+    modalVideo.load();
+
+    videoModal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* BOTÓN X */
+
+closeVideo.addEventListener("click", cerrarVideo);
+
+
+/* CERRAR TOCANDO FUERA DEL VIDEO */
+
+videoModal.addEventListener("click", (event) => {
+
+    if (event.target === videoModal) {
+
+        cerrarVideo();
+
+    }
+
+});
+
+
+/* CERRAR CON ESC */
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+        cerrarVideo();
+
+    }
+
+});
+
+/* EMAILJS */
+
+function enviarFormulario(){
+
+    let nombre =
+    document.getElementById("nombre").value;
+
+    let telefono =
+    document.getElementById("telefono").value;
+
+    let correo =
+    document.getElementById("correo").value;
+
+    let servicio =
+    document.getElementById("servicio").value;
+
+    let plan =
+    document.getElementById("plan").value;
+
+    let mensaje =
+    document.getElementById("mensaje").value;
+
+
+    let templateParams = {
+
+        nombre: nombre,
+
+        telefono: telefono,
+
+        correo: correo,
+
+        servicio: servicio,
+
+        plan: plan,
+
+        mensaje: mensaje
+
+    };
+
+
+    emailjs.send(
+        "service_lb33rz2",
+        "template_g0pa5fr",
+        templateParams
+    )
+
+    .then(function(){
+
+        alert(
+        "✅ Información enviada correctamente. Nos pondremos en contacto contigo."
+        );
+
+        document.getElementById("nombre").value="";
+        document.getElementById("telefono").value="";
+        document.getElementById("correo").value="";
+        document.getElementById("servicio").selectedIndex=0;
+        document.getElementById("plan").selectedIndex=0;
+        document.getElementById("mensaje").value="";
+
+    })
+
+    .catch(function(error){
+
+        alert(
+        "❌ No se pudo enviar la información. Intenta nuevamente."
+        );
+
+        console.error(error);
+
+    });
+
+}
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+
+(function(){
+
+    emailjs.init(
+        "PN4rZ-yIPfj39G4ue"
+    );
+
+})();
+
+</script>
+
+
+</body>
+</html>
